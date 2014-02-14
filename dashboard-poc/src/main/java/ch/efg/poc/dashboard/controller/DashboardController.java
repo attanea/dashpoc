@@ -1,5 +1,7 @@
 package ch.efg.poc.dashboard.controller;
 
+import ch.efg.poc.dashboard.api.IDashboardConfig;
+import ch.efg.poc.dashboard.service.DashboardConfigService;
 import org.osgi.framework.BundleContext;
 import org.osgi.service.cm.ConfigurationAdmin;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,9 @@ public class DashboardController {
     @Autowired
     ConfigurationAdmin configurationAdmin;
 
+    @Autowired
+    private DashboardConfigService dashboardConfigService;
+
     @RequestMapping(method = {RequestMethod.GET})
     public ModelAndView index() throws Exception {
 
@@ -32,6 +37,13 @@ public class DashboardController {
         mav.addObject("configurations", configurations);
 */
         return mav;
+    }
+
+    //RESt should be here
+    @RequestMapping(value = "/config")
+    public IDashboardConfig getDashboardConfiguration(final String userName) {
+
+        return dashboardConfigService.getDashboardConfigurationForUser(userName);
     }
 
     public BundleContext getBundleContext() {
