@@ -39,7 +39,7 @@ public class DashboardController {
         return mav;
     }
 
-    //RESt should be hear
+    //RESt should be here
     @RequestMapping(value = "/config")
     public IDashboardConfig getDashboardConfiguration(final String userName) {
 
