@@ -1,0 +1,63 @@
+table.horizontal_separators {
+	width: 95%;
+}
+table.horizontal_separators td{
+	border-bottom: 1px solid #dddddd;
+	padding: 2px 0 3px 0;
+}
+table.horizontal_separators tr:first-child td{
+	border-top: 1px solid #dddddd;
+}
+
+table.data_table{
+	margin:0px;
+	padding:0px;
+	border:1px solid #aaaaaa;
+    border-collapse: collapse;
+    border-spacing: 0;
+	width:100%;
+	height:100%;
+}
+
+.data_table tr:nth-child(odd){
+	background-color:#e5e5e5;
+}
+.data_table tr:nth-child(even){
+	background-color:#ffffff;
+}
+.data_table td, .data_table th{
+	vertical-align:middle;
+	border:1px solid #aaaaaa;
+	border-width:0px 1px 1px 0px;
+	text-align:left;
+	padding:7px;
+	font-size:14px;
+	font-weight:normal;
+}
+.data_table tr:last-child td{
+	border-width:0px 1px 0px 0px;
+}
+.data_table tr td:last-child{
+	border-width:0px 0px 1px 0px;
+}
+.data_table tr:last-child td:last-child{
+	border-width:0px 0px 0px 0px;
+}
+.data_table th, .data_table tr:first-child td{
+	background-color:#4c4c4c;
+	border:0px solid #aaaaaa;
+	text-align:center;
+	border-width:0px 0px 1px 1px;
+	font-size:14px;
+	font-weight:bold;
+	color:#ffffff;
+}
+.data_table th:hover, .data_table tr:first-child:hover td{
+	background-color:#4c4c4c;
+}
+.data_table tr:first-child td:first-child{
+	border-width:0px 0px 1px 0px;
+}
+.data_table tr:first-child td:last-child{
+	border-width:0px 0px 1px 1px;
+}
