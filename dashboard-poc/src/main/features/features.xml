@@ -8,6 +8,11 @@
         <feature>spring-web</feature>
         <feature>war</feature>
 
+        <bundle>mvn:javax.ws.rs/jsr311-api/1.1.1</bundle>
+        <bundle>mvn:org.codehaus.jackson/jackson-core-asl/1.9.10</bundle>
+        <bundle>mvn:org.codehaus.jackson/jackson-mapper-asl/1.9.10</bundle>
+        <bundle>mvn:org.codehaus.jackson/jackson-jaxrs/1.9.10</bundle>
+
         <bundle>mvn:javax.servlet/com.springsource.javax.servlet.jsp.jstl/1.2.0.v20110728</bundle>
         <bundle>mvn:${project.groupId}/${project.artifactId}/${project.version}/war</bundle>
     </feature>
