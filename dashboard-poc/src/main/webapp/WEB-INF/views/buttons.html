@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<HTML>
+	<HEAD>
+		<TITLE>Buttons</TITLE>
+		<META NAME="Generator" CONTENT="EditPlus">
+		<META NAME="Author" CONTENT="">
+		<META NAME="Keywords" CONTENT="">
+		<META NAME="Description" CONTENT="">
+		<!--<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet" />-->
+		<link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet" />
+	</HEAD>
+
+ <BODY>
+	<style type="text/css">
+		body{
+			font-family: Arial, sans-serif;
+			color: #444444;
+			padding: 20px;
+		}
+		a{
+			color: #008FCF;
+			text-decoration: none;
+		}
+		a:hover{
+			text-decoration: underline;
+		}
+
+		.btn-group {
+			display: inline-block;
+			position: relative;
+			vertical-align: middle;
+			white-space: nowrap;
+		}
+		.btn-group > .btn:first-child {
+			border-bottom-left-radius: 4px;
+			border-top-left-radius: 4px;
+			margin-left: 0;
+		}
+		.btn-group > .btn {
+			border-radius: 0 0 0 0;
+			position: relative;
+		}
+		.btn-group > .btn:last-child, .btn-group > .dropdown-toggle {
+			border-bottom-right-radius: 4px;
+			border-top-right-radius: 4px;
+		}
+		.btn-group > .btn + .btn {
+			margin-left: -5px;
+			border-left: 1px solid white;
+		}
+		.btn{
+			background-color: #666666;
+			color: #FFFFFF;
+			text-decoration: none;
+			cursor: pointer;
+			margin-top: 10px;
+			border-radius: 4px;
+			line-height: 20px;
+			padding: 6px 10px;
+			display: inline-block;
+			vertical-align: middle;
+			text-align: center;
+			white-space: nowrap;
+		}
+		.btn + .btn, .btn-group + .btn, .btn + .btn-group, .btn-group + .btn-group{
+			margin-left: 10px;
+		}
+		.btn i{
+			margin-right: 9px;
+		}
+		.btn i.align-right{
+			margin-right: 0;
+			margin-left: 9px;
+		}
+		.btn-small {
+			font-size: 0.875em;
+			line-height: 18px;
+			padding: 5px 9px;
+		}
+		.btn-large {
+			font-size: 1.125em;
+			line-height: 22px;
+			border-radius: 5px;
+			padding: 7px 11px;
+		}
+		.btn:hover{
+			text-decoration: none;
+		}
+		.btn:focus, .btn:hover{
+			background-color: #808080;
+		}
+		.btn:active{
+			background-color: #4C4C4C;
+		}
+		.btn-primary {
+			background-color: #086C90;
+		}
+		.btn-primary:focus, .btn-primary:hover{
+			background-color: #2789AD;
+		}
+		.btn-primary:active{
+			background-color: #075E7D;
+		}
+		.btn-warning {
+			background-color: #DB643D;
+		}
+		.btn-warning:focus, .btn-warning:hover{
+			background-color: #F17E59;
+		}
+		.btn-warning:active{
+			background-color: #C74F28;
+		}
+	</style>
+
+	<h1>Buttons</h1>
+
+	<p>This page shows a list of buttons that can be used in eBanking and Intranet applications.</p>
+
+	<p>For more information about buttons, please visit the <a href="https://www.attanea.net/wiki/display/INVP/Buttons" target="_blank">Wiki page</a>.</p>
+
+	<p>The scalable icons come from an external style sheet provided by <a href="http://fortawesome.github.io/Font-Awesome/" target="_blank">Font awesome</a>.</p>
+
+	<a class="btn btn-small" href="#" role="button">Cancel</a><a class="btn btn-primary btn-small" href="#" role="button">Validate</a><br />
+
+	<a class="btn" href="#" role="button">Cancel</a><a class="btn btn-primary" href="#" role="button">Validate</a><br />
+
+	<a class="btn btn-large" href="#" role="button">Cancel</a><a class="btn btn-primary btn-large" href="#" role="button">Validate</a><br />
+
+	<hr />
+
+	<a class="btn btn-warning" href="#" role="button"><i class="icon-remove"></i>I disagree</a><a class="btn btn-primary" href="#" role="button"><i class="icon-ok"></i>I agree</a><br />
+
+	<hr />
+
+	<a class="btn btn-primary" href="#" role="button"><i class="icon-signin"></i>Log in</a><a class="btn btn-warning" href="#" role="button">Log out<i class="icon-signout align-right"></i></a><br />
+
+	<hr />
+	
+	<a class="btn" href="#" role="button"><i class="icon-chevron-left"></i>Previous</a><a class="btn" href="#" role="button">Next<i class="icon-chevron-right align-right"></i></a><br />
+	
+	<hr />
+
+	<a class="btn" href="#" role="button"><i class="icon-undo"></i>Undo</a><a class="btn" href="#" role="button">Redo<i class="icon-repeat align-right"></i></a><br />
+
+	<hr />
+
+	<a class="btn btn-primary" href="#" role="button"><i class="icon-envelope"></i>New message</a><a class="btn" href="#" role="button"><i class="icon-inbox"></i>Inbox</a><a class="btn" href="#" role="button"><i class="icon-reply"></i>Reply</a><a class="btn" href="#" role="button"><i class="icon-mail-forward"></i>Forward</a><br />
+
+	<hr />
+
+	<a class="btn" href="#" role="button"><i class="icon-pencil"></i>Edit</a><a class="btn btn-primary" href="#" role="button"><i class="icon-save"></i>Save</a><a class="btn btn-warning" href="#" role="button"><i class="icon-remove"></i>Delete</a><br />
+
+	<hr />
+
+	<a class="btn btn-primary" href="#" role="button"><i class="icon-search"></i>Search</a><a class="btn btn-primary" href="#" role="button"><i class="icon-filter"></i>Filter</a><br />
+
+	<a class="btn" href="#" role="button"><i class="icon-puzzle-piece"></i>Manage Dashboard</a><br />
+
+	<a class="btn btn-primary" href="#" role="button"><i class="icon-plus"></i>Add</a><br />
+
+	<hr />
+
+	<a class="btn" href="#" role="button"><i class="icon-cog"></i>Settings</a><br />
+
+	<a class="btn" href="#" role="button"><i class="icon-download-alt"></i>Download</a><br />
+
+	<a class="btn" href="#" role="button"><i class="icon-refresh"></i>Refresh</a><br />
+
+	<a class="btn" href="#" role="button"><i class="icon-print"></i>Print</a><br />
+
+	<hr />
+
+	<div class="btn-group open">
+		<a class="btn" href="#"><i class="icon-share"></i>Export</a>
+		<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+			<span class="icon-caret-down"></span></a>
+	</div>
+
+	<a class="btn" href="#" role="button">Switzerland<i class="icon-caret-down align-right"></i></a><br />
+
+
+	<hr />
+
+	<div class="btn-group">
+		<a class="btn" href="#"><span class="icon-align-left"></span></a>
+		<a class="btn" href="#"><span class="icon-align-center"></span></a>
+		<a class="btn" href="#"><span class="icon-align-right"></span></a>
+		<a class="btn" href="#"><span class="icon-align-justify"></span></a>
+	</div>
+
+ </BODY>
+</HTML>

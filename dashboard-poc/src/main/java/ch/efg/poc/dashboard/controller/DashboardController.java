@@ -34,7 +34,7 @@ public class DashboardController {
     @RequestMapping(method = {RequestMethod.GET})
     public ModelAndView index() throws Exception {
 
-        ModelAndView mav = new ModelAndView("index");
+        ModelAndView mav = new ModelAndView("dashboard");
 
         mav.addObject("applications", new Integer[]{0, 1,});
 /*
