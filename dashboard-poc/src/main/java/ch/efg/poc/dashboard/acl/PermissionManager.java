@@ -19,11 +19,9 @@ public class PermissionManager {
 
         List<String> applications = new ArrayList<String>();
 
-        applications.add("Application1");
-        applications.add("Application2");
-        applications.add("Application3");
-        applications.add("Application4");
-        applications.add("Application5");
+        for (int i = 1; i < 31; ++i) {
+            applications.add("Application_" + i);
+        }
 
         return applications;
     }

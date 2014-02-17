@@ -19,9 +19,9 @@ public class UserService {
 
         Set<String> applications = new HashSet<String>();
 
-        applications.add("Application2");
-        applications.add("Application3");
-        applications.add("Application5");
+        for (int i = 1; i < 31; ++i) {
+            applications.add("Application_" + ++i);
+        }
 
         return applications;
     }
