@@ -5,10 +5,10 @@ package ch.efg.poc.dashboard.model;
  */
 public class TableData {
     private int totalCount;
-    private TableRow[] data;
+    private TableRow[] aaData;
 
-    public TableData(TableRow[] data, int totalCount) {
-        this.data = data;
+    public TableData(TableRow[] aaData, int totalCount) {
+        this.aaData = aaData;
         this.totalCount = totalCount;
     }
 
@@ -16,7 +16,7 @@ public class TableData {
         return totalCount;
     }
 
-    public TableRow[] getData() {
-        return data;
+    public TableRow[] getAaData() {
+        return aaData;
     }
 }

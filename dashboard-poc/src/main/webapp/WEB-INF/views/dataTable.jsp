@@ -15,7 +15,7 @@
     <script type="text/javascript" charset="utf-8">
         $(document).ready(function() {
             var oTable = $('#example').dataTable( {
-                "sAjaxSource": "resources/data/aaData.json",
+                "sAjaxSource": "table-data?limit=1000",
                 "bProcessing": true,
                 "bPaginate": false,
                 "bFilter": false,
@@ -31,6 +31,9 @@
                     { "mData": "price" },
                     { "mData": "change" },
                     { "mData": "pctChange" },
+                    { "mData": "street" },
+                    { "mData": "area" },
+                    { "mData": "region" },
                     { "mData": "lastChange" }
                 ]
             });
@@ -56,6 +59,9 @@
                 <th width="25%">Price</th>
                 <th width="25%">Change</th>
                 <th width="15%">PCT Change</th>
+                <th width="20%">Street</th>
+                <th width="20%">Area</th>
+                <th width="20%">Region</th>
                 <th width="15%">Last change</th>
             </tr>
             </thead>
@@ -70,6 +76,9 @@
                 <th>Price</th>
                 <th>Change</th>
                 <th>PCT Change</th>
+                <th width="20%">Street</th>
+                <th width="20%">Area</th>
+                <th width="20%">Region</th>
                 <th>Last change</th>
             </tr>
             </tfoot>
