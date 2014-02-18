@@ -18,11 +18,9 @@ public class UserService {
     public Set<String> getFavouriteApplications(final String userName) {
 
         Set<String> applications = new HashSet<String>();
-
-        for (int i = 1; i < 31; ++i) {
-            applications.add("Application_" + ++i);
+        for (int i=0; i<25; ++i){
+            applications.add("Application " + 2*i);
         }
-
         return applications;
     }
 }

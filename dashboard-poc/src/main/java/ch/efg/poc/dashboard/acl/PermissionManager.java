@@ -17,12 +17,11 @@ public class PermissionManager {
 
     public List<String> getAvailableApplications(final String userName) {
 
-        List<String> applications = new ArrayList<String>();
-
-        for (int i = 1; i < 31; ++i) {
-            applications.add("Application_" + i);
+        List<String> applications = new ArrayList<String>(50);
+        for (int i=0; i<50; ++i){
+            applications.add("Application " + i);
         }
-
         return applications;
     }
+
 }
