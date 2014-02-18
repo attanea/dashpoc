@@ -5,7 +5,18 @@ $(function () {
     });
 
     var ApplicationsCollection = Backbone.Collection.extend({
-        model: Application
+        model: Application,
+        url: '/dashboard/config/petzi',
+
+        initialize : function(options) {
+            this.eventAggregator = options.eventAggregator;
+        },
+
+        parse: function(response){
+            var applicationFilters = response.filters || [];
+            this.eventAggregator.trigger("filtersLoaded", applicationFilters);
+            return response.applications;
+        }
     });
 
     var Filter = Backbone.Model.extend({
@@ -33,15 +44,22 @@ $(function () {
         initialize : function(options) {
             var that = this;
             this.eventAggregator = options.eventAggregator;
-            this.initialCollection = this.collection.clone();
+            //this.initialCollection = this.collection.clone();
             // Bind render method to this object
             _.bindAll(this,
                 'render',
                 'onFilterSelect',
-                'onApplicationSearch'
+                'onApplicationSearch',
+                'onModelChange'
             );
+            this.collection.bind('reset', this.onModelChange);
             this.eventAggregator.bind("filterSelected", this.onFilterSelect);
             this.eventAggregator.bind("searchApplications", this.onApplicationSearch);
+        },
+
+        onModelChange: function(){
+            this.initialCollection =  this.initialCollection || this.collection.clone();
+            this.render();
         },
 
         render : function() {
@@ -74,7 +92,7 @@ $(function () {
             } else if (filterName === 'My favorites'){
                 var tmpApplicationCollection = new ApplicationsCollection([]);
                 this.initialCollection.each(function(app) {
-                    if (app.get("isFavourite")){
+                    if (app.get("favourite")){
                         tmpApplicationCollection.add(app);
                     }
                 });
@@ -151,7 +169,19 @@ $(function () {
 
     var FilterCollectionView = Backbone.View.extend({
         initialize: function(options) {
+            _.bindAll(this, 'render', 'onFiltersLoaded');
             this.eventAggregator = options.eventAggregator;
+            this.eventAggregator.bind("filtersLoaded", this.onFiltersLoaded);
+        },
+
+        onFiltersLoaded: function(filters){
+            var filterObjects = [{"name" : "All"}, {"name" : "My favorites"}];
+            _.each(filters, function(filter){
+                filterObjects.push({"name" : filter});
+            });
+
+            this.collection = new Filters(filterObjects);
+            this.render();
         },
 
         render : function() {
@@ -171,7 +201,7 @@ $(function () {
                 filterViews.push(view.render().el);
             });
             $(that.el).append(filterViews);
-            this.selectFirstFilter();
+            //this.selectFirstFilter();
             return this;
         },
 
@@ -206,19 +236,9 @@ $(function () {
 
         index: function() {
 
-            var appArray = [
-                {"name" : "Application 1", "isFavourite": false, "filters" : ["Banking", "Investment", "Admin", "Communication", "Employee"]},
-                {"name" : "Application 2", "isFavourite": true, "filters" : ["Banking", "Investment", "Admin", "Communication"]},
-                {"name" : "Application 3", "isFavourite": false, "filters" : ["Banking", "Investment", "Admin"]},
-                {"name" : "Application 4", "isFavourite": true, "filters" : ["Banking", "Investment"]},
-                {"name" : "Application 5", "isFavourite": false, "filters" : ["Banking"]},
-                {"name" : "Application 6", "isFavourite": true},
-            ]
-
-            //for(var i=0; i<20; ++i){
-            //	appArray.push({"name" : "Application " + i, "isFavourite": true});
-            //};
-            var applications = new ApplicationsCollection(appArray);
+            var applications = new ApplicationsCollection({
+                eventAggregator : eventAggregator
+            });
 
             var appCollectionView = new ApplicationsCollectionView({
                 collection : applications,
@@ -226,7 +246,7 @@ $(function () {
                 eventAggregator : eventAggregator
             });
 
-            var joinedFilters = [];
+/*            var joinedFilters = [];
             applications.each(function(app) {
                 if (!_.isUndefined(app.get("filters"))){
                     joinedFilters = _.union(joinedFilters, app.get("filters"));
@@ -237,10 +257,10 @@ $(function () {
                 filterObjects.push({"name" : filter});
             });
 
-            var filters = new Filters(filterObjects);
+            var filters = new Filters(filterObjects);*/
 
             var filterCollectionView = new FilterCollectionView({
-                collection : filters,
+                //collection : filters,
                 el : $('#filter_list'),
                 eventAggregator : eventAggregator
             });
@@ -249,10 +269,10 @@ $(function () {
                 eventAggregator : eventAggregator
             });
 
+            applications.fetch({'reset': true});
+            /*
             filterCollectionView.render();
-            applicationSearch.render();
-            // And render it
-            //appCollectionView.render();
+            applicationSearch.render();*/
         }
     });
 

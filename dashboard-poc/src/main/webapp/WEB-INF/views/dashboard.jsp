@@ -36,7 +36,7 @@
     <script type="content/template" id="app-template">
         <a class="dashboard_app_link" href="app_view.html">
             <div class="dashboard_app dashboard_box">
-                <@ if(isFavourite) { @>
+                <@ if(favourite) { @>
                 <i class="fa fa-star"></i>
                 <@ } else { @>
                 <i class="fa fa-star-o"></i>
@@ -162,7 +162,7 @@
 
 <div id="applications"></div>
 
-<a class="dashboard_app_link" href="app_view.html">
+<%--<a class="dashboard_app_link" href="app_view.html">
     <div class="dashboard_app dashboard_box">
         <i class="fa fa-star"></i>
         <div class="dashboard_app_icon">
@@ -413,7 +413,7 @@
         </div>
         <div class="dashboard_app_label">App 28 name</div>
     </div>
-</a>
+</a>--%>
 </div>
 </div>
 <div class="yui3-u-1-3">

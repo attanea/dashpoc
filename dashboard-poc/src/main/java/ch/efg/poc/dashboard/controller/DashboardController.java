@@ -63,7 +63,7 @@ public class DashboardController {
         Set<ApplicationDTO> applicationDTOs = new TreeSet<ApplicationDTO>();
         for (IApplication application : dashboardConfig.getApplications()) {
             ApplicationDTO applicationDTO = new ApplicationDTO(application.getName());
-            applicationDTO.setTags(application.getTags());
+            applicationDTO.setFilters(application.getTags());
             applicationDTO.setDescription(application.getDescription());
 
             applicationDTO.setFavourite(dashboardConfig.getFavouriteApplicationNames().contains(application.getName()));

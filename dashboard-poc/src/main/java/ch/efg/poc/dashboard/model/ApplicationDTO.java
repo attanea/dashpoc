@@ -13,7 +13,7 @@ public class ApplicationDTO implements Comparable<ApplicationDTO>{
 
     private String name;
     private String description;
-    private Set<String> tags;
+    private Set<String> filters;
     private boolean favourite;
 
     public ApplicationDTO(String name) {
@@ -36,12 +36,12 @@ public class ApplicationDTO implements Comparable<ApplicationDTO>{
         this.description = description;
     }
 
-    public Set<String> getTags() {
-        return tags;
+    public Set<String> getFilters() {
+        return filters;
     }
 
-    public void setTags(Set<String> tags) {
-        this.tags = tags;
+    public void setFilters(Set<String> filters) {
+        this.filters = filters;
     }
 
     public boolean isFavourite() {
