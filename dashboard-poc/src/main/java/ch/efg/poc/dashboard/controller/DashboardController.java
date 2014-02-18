@@ -19,7 +19,6 @@ import java.util.Set;
 import java.util.TreeSet;
 
 @Controller
-@RequestMapping(value = "/" )
 public class DashboardController {
 
     @Autowired
@@ -31,7 +30,7 @@ public class DashboardController {
     @Autowired
     private DashboardConfigService dashboardConfigService;
 
-    @RequestMapping(method = {RequestMethod.GET})
+    @RequestMapping(value="/",method = {RequestMethod.GET})
     public ModelAndView index() throws Exception {
 
         ModelAndView mav = new ModelAndView("dashboard");

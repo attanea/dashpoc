@@ -7,7 +7,7 @@ $(function () {
             if (status == "error") {
 //                var msg = "Sorry but there was an error: ";
 //                $("#error").html(msg + xhr.status + " " + xhr.statusText);
-                $("#dashboard_welcome").load("/dashboard/welcome");
+//                $("#dashboard_welcome").load("/dashboard/welcome");
             }
         })
 });

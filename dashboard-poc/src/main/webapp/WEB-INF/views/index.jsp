@@ -16,6 +16,7 @@
     </script>
   </head>
   <body>
+  <img src="img/image.png">
     <div id="accordion">
 	  <h3><a href="#">Application</a></h3>
 	  <div>

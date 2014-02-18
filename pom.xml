@@ -21,6 +21,7 @@
         <module>dashboard-welcome</module>
         <module>spring-extender</module>
         <module>web-extender</module>
+        <module>ext-js-poc</module>
     </modules>
     <dependencyManagement>
         <dependencies>

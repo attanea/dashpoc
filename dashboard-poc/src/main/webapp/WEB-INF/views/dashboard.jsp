@@ -108,7 +108,9 @@
 <section class="yui3-g">
 
     <div class="yui3-u-2-3">
-        <div id="dashboard_welcome"></div>
+        <div id="dashboard_welcome">
+            <h3>Welcome client</h3>
+        </div>
     </div><!-- yui3-u-2-3 -->
 
     <div class="yui3-u-1-3">
