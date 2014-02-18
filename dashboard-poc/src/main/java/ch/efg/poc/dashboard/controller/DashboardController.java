@@ -46,6 +46,12 @@ public class DashboardController {
         return mav;
     }
 
+    @RequestMapping(value = "/dataTable", method = {RequestMethod.GET})
+    public ModelAndView dataTable() throws Exception {
+        ModelAndView mav = new ModelAndView("dataTable");
+        return mav;
+    }
+
     /**
      * Provides Dashboard configuration as JSON
      *
