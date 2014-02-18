@@ -78,6 +78,11 @@ public class DashboardController {
         return dashboardConfigurationModel;
     }
 
+    @RequestMapping(value = "/welcome")
+    public ModelAndView welcome() {
+        return new ModelAndView("welcome");
+    }
+
     public BundleContext getBundleContext() {
         return bundleContext;
     }

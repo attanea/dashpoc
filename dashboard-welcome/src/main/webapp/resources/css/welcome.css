@@ -1,0 +1,15 @@
+#welcome_box, #alert_box, #widgets_area {
+	padding: 10px;
+	margin-bottom: 20px;
+	height: 180px;
+}
+
+#welcome_box {
+	margin-right: 20px;
+}
+
+#content_left_top_1, #content_left_top_2 {
+	display: inline-block;
+	vertical-align: top;
+	width: 49%;
+}

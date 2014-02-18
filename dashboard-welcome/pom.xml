@@ -13,7 +13,7 @@
     <name>Welcome</name>
     <artifactId>dashboard-welcome</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>bundle</packaging>
+    <packaging>war</packaging>
 
     <dependencies>
         <dependency>
@@ -33,26 +33,28 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.osgi</groupId>
-            <artifactId>spring-osgi-extender</artifactId>
-            <version>1.2.1</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.springframework.osgi</groupId>
-            <artifactId>spring-osgi-web</artifactId>
-            <version>1.2.1</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
@@ -69,7 +71,6 @@
                 <artifactId>maven-bundle-plugin</artifactId>
                 <version>2.3.5</version>
                 <extensions>true</extensions>
-<!--
                 <executions>
                     <execution>
                         <id>bundle-manifest</id>
@@ -79,46 +80,33 @@
                         </goals>
                     </execution>
                 </executions>
--->
                 <configuration>
-<!--
                     <supportedProjectTypes>
                         <supportedProjectType>war</supportedProjectType>
                     </supportedProjectTypes>
--->
-                    <!--<manifestLocation>target/bnd</manifestLocation>-->
+                    <manifestLocation>target/bnd</manifestLocation>
                     <instructions>
-                        <!--<Webapp-Context>welcome</Webapp-Context>-->
-                        <!--<Web-ContextPath>welcome</Web-ContextPath>-->
+                        <Webapp-Context>welcome</Webapp-Context>
+                        <Web-ContextPath>welcome</Web-ContextPath>
                         <Export-Package>!*</Export-Package>
                         <Import-Package>
-                            javax.servlet; version="[2.4.0, 4.0.0)",
-                            javax.servlet.http; version="[2.4.0, 4.0.0)",
-                            javax.servlet.jsp.jstl.core; version="[1.2,2.0)",
-                            javax.servlet.resources; version="[2.4.0, 4.0.0)",
-                            org.springframework.beans.factory.config,
-                            org.springframework.osgi.web.context.support; version="[1.2,2.0)",
-                            org.springframework.stereotype,
-                            org.springframework.web.bind.annotation,
-                            org.springframework.web.servlet,
-                            org.springframework.web.servlet.view,
-                            org.springframework.web,
+                            org.osgi.framework,
                             org.springframework.osgi.web.deployer.support,
                             org.springframework.osgi.context,
                             org.springframework.osgi.extender.support,
                             org.springframework.osgi.extender.support.scanning,
-                            org.osgi.framework
+                            org.springframework.beans.factory.config,
+                            <!-- spring web imports-->
+                            org.springframework.osgi.web.context.support; version="[1.2,2.0)",
+                            org.springframework.stereotype,
+                            org.springframework.web.bind.annotation,
+                            org.springframework.web.servlet,
+                            org.springframework.web.servlet.view
                         </Import-Package>
                         <Bundle-ClassPath>
                             WEB-INF/classes,
                             .
                         </Bundle-ClassPath>
-                        <Fragment-Host>
-                            ch.efg.poc.dashboard-poc
-                            <!--org.springframework.osgi.web.extender-->
-                            <!--org.springframework.osgi.extender-->
-                        </Fragment-Host>
-                        <Provide-Capability>org.springframework.osgi.extender</Provide-Capability>
                     </instructions>
                 </configuration>
             </plugin>
