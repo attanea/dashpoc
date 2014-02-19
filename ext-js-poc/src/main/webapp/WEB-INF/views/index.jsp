@@ -1,63 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>Ext JS table sample</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" href="resources/css/ext-all.css" type="text/css"/>
-    <script src="resources/js/ext-all.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/ext-all.css" type="text/css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/index.css" type="text/css"/>
+    <script src="${pageContext.request.contextPath}/resources/js/ext-all.js" type="text/javascript"></script>
     <%--                                                                       --%>
     <%--    <script src="resources/grid1.js" type="text/javascript"></script>  --%>
     <%--    <script src="resources/grid2.js" type="text/javascript"></script>  --%>
     <%--    <script src="resources/grid3.js" type="text/javascript"></script>  --%>
-    <script src="resources/js/grid4.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/grid4.js" type="text/javascript"></script>
     <%--<script src="http://localhost/examples/grid4.js" type="text/javascript"></script>--%>
     <%--    <script src="resources/grid5.js" type="text/javascript"></script>       --%>
     <%--    <script src="resources/grid6.js" type="text/javascript"></script>       --%>
     <%--    <script src="resources/grid7.js" type="text/javascript"></script>       --%>
     <%--    <script src="resources/grid8.js" type="text/javascript"></script>       --%>
     <%--    <script src="resources/grid9.js" type="text/javascript"></script>       --%>
-    <style>
-        .page-wrapper {
-            max-width: 1000px;
-            padding: 0 20px 40px 20px;
-            margin: auto;
-        }
-        #app-carousel{
-            height: 80px;
-        }
-        #app-carousel .jcarousel li{
-            width: auto;
-        }
-        #app-carousel #apps_nav {
-            margin: 0;
-        }
-        #app-carousel .jcarousel ul{
-            left: -10px;
-        }
-    </style>
-    <script type="text/javascript">
-        Ext.onReady(function(){
-            var loadMask = new Ext.LoadMask(Ext.get('app-carousel'), {msg: "Please wait..."});
-            Ext.get('app-carousel').load({
-                url : '/dashboard/carousel/',
-                scripts : true,
-                success: function(response){
-                    loadMask.hide();
-                }
-            });
-
-           /* Ext.Ajax.request({
-                url: '/dashboard/carousel/',
-                params: {
-                    id: 1
-                },
-                success: function(response){
-                    var text = response.responseText;
-                    // process server response here
-                }
-            });*/
-        })
-    </script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/index.js"></script>
 
 </head>
 <body>
