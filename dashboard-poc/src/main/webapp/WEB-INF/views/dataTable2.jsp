@@ -16,14 +16,13 @@
     <script type="text/javascript" charset="utf-8">
         $(document).ready(function() {
             var oTable = $('#example').dataTable( {
-                "sAjaxSource": "table-data?limit=1000",
                 "bProcessing": true,
                 "bPaginate": false,
                 "bFilter": false,
                 //"sScrollY": "300px",
                 //"sScrollX": "100%",
                 //"sScrollXInner": "1200px",
-                //"bScrollCollapse": true,
+                "bScrollCollapse": true,
                 "sDom": 'RC<"clear">lfrtip',
                 "oColReorder": {
                     "iFixedColumns": 2
@@ -57,37 +56,46 @@
     </div>
 
     <div id="dynamic">
-        <table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
-            <thead>
-            <tr>
-                <th width="20%">Company</th>
-                <th width="25%">Price</th>
-                <th width="25%">Change</th>
-                <th width="15%">PCT Change</th>
-                <th width="20%">Street</th>
-                <th width="20%">Area</th>
-                <th width="20%">Region</th>
-                <th width="15%">Last change</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td colspan="5" class="dataTables_empty">Loading data from server</td>
-            </tr>
-            </tbody>
-            <tfoot>
-            <tr>
-                <th>Company</th>
-                <th>Price</th>
-                <th>Change</th>
-                <th>PCT Change</th>
-                <th width="20%">Street</th>
-                <th width="20%">Area</th>
-                <th width="20%">Region</th>
-                <th>Last change</th>
-            </tr>
-            </tfoot>
-        </table>
+    <table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
+    <thead>
+    <tr>
+        <th width="20%">Company</th>
+        <th width="25%">Price</th>
+        <th width="25%">Change</th>
+        <th width="15%">PCT Change</th>
+        <th width="20%">Street</th>
+        <th width="20%">Area</th>
+        <th width="20%">Region</th>
+        <th width="15%">Last change</th>
+    </tr>
+    </thead>
+    <tbody>
+    <%  for (int i = 0; i < 1000; i++) { %>
+    <tr class="gradeX">
+        <td>company <%=i%></td>
+        <td><%=i%></td>
+        <td><%=i%></td>
+        <td><%=i%></td>
+        <td>street <%=i%></td>
+        <td>area 1</td>
+        <td>region <%=i%></td>
+        <td><%= 1392805397016l + i%></td>
+    </tr>
+    <%  } %>
+    </tbody>
+    <tfoot>
+    <tr>
+        <th>Company</th>
+        <th>Price</th>
+        <th>Change</th>
+        <th>PCT Change</th>
+        <th width="20%">Street</th>
+        <th width="20%">Area</th>
+        <th width="20%">Region</th>
+        <th>Last change</th>
+    </tr>
+    </tfoot>
+    </table>
     </div>
 </div>
 </body>

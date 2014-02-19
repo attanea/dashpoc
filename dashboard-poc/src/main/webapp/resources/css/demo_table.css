@@ -30,6 +30,8 @@
  * DataTables features
  */
 
+th { border-right: 1px solid black }
+
 .dataTables_wrapper {
 	position: relative;
 	clear: both;

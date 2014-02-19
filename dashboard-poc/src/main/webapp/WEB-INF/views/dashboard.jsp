@@ -139,22 +139,19 @@
     <input type="text" id="app_search" /><i class="fa fa-search"></i>
 </div>
 
-
-
 <div id="apps_navigation">
 
-<div id="applications"></div>
-
-<%--<a class="dashboard_app_link" href="app_view.html">
+<a class="dashboard_app_link" href="http://efginternational.com" target="_blank">
     <div class="dashboard_app dashboard_box">
         <i class="fa fa-star"></i>
         <div class="dashboard_app_icon">
-            <img src="resources/img/app/icones_account_closing_64_44.png" alt="App 1 name" />
+            <img src="resources/img/app/icones_account_closing_64_44.png" alt="EFG International" />
         </div>
-        <div class="dashboard_app_label">App 1 name</div>
+        <div class="dashboard_app_label">EFG International</div>
     </div>
 </a>
-<a class="dashboard_app_link" href="app_view.html">
+<div id="applications"></div>
+<%--<a class="dashboard_app_link" href="app_view.html">
     <div class="dashboard_app dashboard_box">
         <i class="fa fa-star-o"></i>
         <div class="dashboard_app_icon">
