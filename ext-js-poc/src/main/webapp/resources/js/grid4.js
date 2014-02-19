@@ -56,8 +56,8 @@ Ext.onReady(function() {
                 dataIndex: 'region'
             }
         ],
-        height: 800,
-        width: 900,
+//        height: 800,
+//        width: 900,
         title: 'Dynamic grid with ajax proxy',
         renderTo: 'grid4'/*,
          bbar: Ext.create('Ext.PagingToolbar', {

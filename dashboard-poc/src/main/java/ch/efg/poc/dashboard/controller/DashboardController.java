@@ -94,6 +94,16 @@ public class DashboardController {
         return new ModelAndView("welcome");
     }
 
+    @RequestMapping(value = "/carousel")
+    public ModelAndView carousel() {
+        return new ModelAndView("appCarousel");
+    }
+
+    @RequestMapping(value = "/header")
+    public ModelAndView header() {
+        return new ModelAndView("header");
+    }
+
     public BundleContext getBundleContext() {
         return bundleContext;
     }
