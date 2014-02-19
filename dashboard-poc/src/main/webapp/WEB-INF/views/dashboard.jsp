@@ -145,7 +145,7 @@
     <div class="dashboard_app dashboard_box">
         <i class="fa fa-star"></i>
         <div class="dashboard_app_icon">
-            <img src="resources/img/app/icones_account_closing_64_44.png" alt="EFG International" />
+            <img src="resources/img/app/icones_audit_findings_64_44.png" alt="EFG International" />
         </div>
         <div class="dashboard_app_label">EFG International</div>
     </div>
