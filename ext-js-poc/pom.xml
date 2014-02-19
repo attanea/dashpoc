@@ -10,15 +10,14 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <name>Dashboard POC</name>
-    <artifactId>dashboard-poc</artifactId>
+    <properties>
+        <context.path>ext-js</context.path>
+    </properties>
+
+    <name>Ext JS</name>
+    <artifactId>ext-js</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
-
-    <properties>
-        <bundle.symbolicName>ch.efg.poc.dashboard-poc</bundle.symbolicName>
-        <bundle.namespace>ch.efg.poc.dashboard-poc</bundle.namespace>
-    </properties>
 
     <dependencies>
         <dependency>
@@ -38,44 +37,28 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
+            <scope>provided</scope>
         </dependency>
-
-        <!-- Jackson JSON Mapper -->
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-core-asl</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-mapper-asl</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-jaxrs</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>javax.ws.rs</groupId>
-            <artifactId>jsr311-api</artifactId>
-            <version>1.1.1</version>
-        </dependency>
-
     </dependencies>
 
     <build>
         <plugins>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
@@ -91,6 +74,7 @@
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
                 <version>2.3.5</version>
+                <extensions>true</extensions>
                 <executions>
                     <execution>
                         <id>bundle-manifest</id>
@@ -106,55 +90,28 @@
                     </supportedProjectTypes>
                     <manifestLocation>target/bnd</manifestLocation>
                     <instructions>
-                        <Webapp-Context>dashboard</Webapp-Context>
-                        <Web-ContextPath>dashboard</Web-ContextPath>
+                        <Webapp-Context>${context.path}</Webapp-Context>
+                        <Web-ContextPath>${context.path}</Web-ContextPath>
                         <Export-Package>!*</Export-Package>
                         <Import-Package>
-                            javax.servlet; version="[2.4.0, 4.0.0)",
-                            javax.servlet.http; version="[2.4.0, 4.0.0)",
-                            javax.servlet.jsp.jstl.core; version="[1.2,2.0)",
-                            javax.servlet.resources; version="[2.4.0, 4.0.0)",
-                            <!-- Just import EVERYTHING from Apache standard JSTL impl. -->
-                            org.apache.taglibs.standard; version="[1.2.0,2)",
-                            org.apache.taglibs.standard.extra.spath; version="[1.2.0,2)",
-                            org.apache.taglibs.standard.functions; version="[1.2.0,2)",
-                            org.apache.taglibs.standard.lang.jstl; version="[1.2.0,2)",
-                            org.apache.taglibs.standard.lang.jstl.parser; version="[1.2.0,2)",
-                            org.apache.taglibs.standard.lang.jstl.test; version="[1.2.0,2)",
-                            org.apache.taglibs.standard.lang.jstl.test.beans; version="[1.2.0,2)",
-                            org.apache.taglibs.standard.lang.support; version="[1.2.0,2)",
-                            org.apache.taglibs.standard.resources; version="[1.2.0,2)",
-                            org.apache.taglibs.standard.tag.common.core; version="[1.2.0,2)",
-                            org.apache.taglibs.standard.tag.common.fmt; version="[1.2.0,2)",
-                            org.apache.taglibs.standard.tag.common.sql; version="[1.2.0,2)",
-                            org.apache.taglibs.standard.tag.common.xml; version="[1.2.0,2)",
-                            org.apache.taglibs.standard.tag.el.core; version="[1.2.0,2)",
-                            org.apache.taglibs.standard.tag.el.fmt; version="[1.2.0,2)",
-                            org.apache.taglibs.standard.tag.el.sql; version="[1.2.0,2)",
-                            org.apache.taglibs.standard.tag.el.xml; version="[1.2.0,2)",
-                            org.apache.taglibs.standard.tag.rt.core; version="[1.2.0,2)",
-                            org.apache.taglibs.standard.tag.rt.fmt; version="[1.2.0,2)",
-                            org.apache.taglibs.standard.tag.rt.sql; version="[1.2.0,2)",
-                            org.apache.taglibs.standard.tag.rt.xml; version="[1.2.0,2)",
-                            org.apache.taglibs.standard.tei; version="[1.2.0,2)",
-                            org.apache.taglibs.standard.tlv; version="[1.2.0,2)",
+                            org.osgi.framework,
+                            org.springframework.osgi.web.deployer.support,
+                            org.springframework.osgi.context,
+                            org.springframework.osgi.extender.support,
+                            org.springframework.osgi.extender.support.scanning,
                             org.springframework.beans.factory.config,
+                            <!-- spring web imports-->
                             org.springframework.osgi.web.context.support; version="[1.2,2.0)",
                             org.springframework.stereotype,
                             org.springframework.web.bind.annotation,
                             org.springframework.web.servlet,
-                            org.springframework.web.servlet.view,
-                            org.osgi.framework,
-                            *
+                            org.springframework.web.servlet.view
                         </Import-Package>
                         <Bundle-ClassPath>
                             WEB-INF/classes,
-                            <!-- Have to use this for PAX Web 0.7.4 to find JSPs since it uses classpath. -->
                             .
                         </Bundle-ClassPath>
-                        <Bundle-Activator>
-                            ch.efg.poc.dashboard.DashboardActivator
-                        </Bundle-Activator>
+                        <!--<Spring-Context>/WEB-INF/spring.xml</Spring-Context>-->
                     </instructions>
                 </configuration>
             </plugin>
