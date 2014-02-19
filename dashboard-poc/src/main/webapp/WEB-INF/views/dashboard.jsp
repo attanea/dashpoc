@@ -150,6 +150,27 @@
         <div class="dashboard_app_label">EFG International</div>
     </div>
 </a>
+
+<a class="dashboard_app_link" href="/ext-js">
+    <div class="dashboard_app dashboard_box">
+        <i class="fa fa-star-o"></i>
+        <div class="dashboard_app_icon">
+            <img src="resources/img/app/icones_logbook_64_44.png" alt="extjs sample" />
+        </div>
+        <div class="dashboard_app_label">Extjs</div>
+    </div>
+</a>
+
+<a class="dashboard_app_link" href="dataTable">
+    <div class="dashboard_app dashboard_box">
+        <i class="fa fa-star-o"></i>
+        <div class="dashboard_app_icon">
+            <img src="resources/img/app/icones_clients_groups_64_44.png" alt="dataTable sample" />
+        </div>
+        <div class="dashboard_app_label">JQuery dataTable</div>
+    </div>
+</a>
+
 <div id="applications"></div>
 <%--<a class="dashboard_app_link" href="app_view.html">
     <div class="dashboard_app dashboard_box">

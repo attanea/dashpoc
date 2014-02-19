@@ -152,9 +152,6 @@
                             <!-- Have to use this for PAX Web 0.7.4 to find JSPs since it uses classpath. -->
                             .
                         </Bundle-ClassPath>
-                        <Bundle-Activator>
-                            ch.efg.poc.dashboard.DashboardActivator
-                        </Bundle-Activator>
                     </instructions>
                 </configuration>
             </plugin>
