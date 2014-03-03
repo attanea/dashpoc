@@ -1,0 +1,103 @@
+.v-button-caption {
+	line-height: 22px;
+}
+#container .v-button, #container  .v-disabled.v-button, #container .v-button-primary, 
+#container .v-disabled.v-button-primary,
+.popupContent .v-button, .popupContent  .v-disabled.v-button, .popupContent .v-button-primary, 
+.popupContent .v-disabled.v-button-primary {
+    background-image: url('img/button-sprites.png');
+    background-position: left 0;
+	padding-left: 6px;
+	height: 30px;
+}
+#container .v-button-wrap, #container .v-disabled.v-button .v-button-wrap, 
+#container .v-button-primary .v-button-wrap, #container .v-disabled.v-button-primary .v-button-wrap,
+.popupContent .v-button-wrap, .popupContent .v-disabled.v-button .v-button-wrap, 
+.popupContent .v-button-primary .v-button-wrap, .popupContent .v-disabled.v-button-primary .v-button-wrap {
+    background-image: url('img/button-sprites.png');
+    background-position: right -30px;
+	padding-left: 10px;
+	height: 27px;
+}
+#container .v-button:hover, #container .v-button-primary:hover,
+.popupContent .v-button:hover, .popupContent .v-button-primary:hover  {
+    background-position: left -60px;
+	padding-left: 6px;
+}
+#container .v-button:hover .v-button-wrap, #container .v-button-primary:hover .v-button-wrap,
+.popupContent .v-button:hover .v-button-wrap, .popupContent .v-button-primary:hover .v-button-wrap  {
+    background-position: right -90px;
+	padding-left: 10px;
+}
+.v-button:focus, .v-button-primary:focus {
+	background-image: url('img/button-sprites.png');
+    background-position: left -180px;
+	padding-left: 6px;
+}
+.v-button:focus .v-button-wrap, .v-button-primary:focus .v-button-wrap {
+	background-image: url('img/button-sprites.png');
+    background-position: right -210px;
+	padding-left: 10px;
+}
+.v-button:focus:hover, .v-button-primary:focus:hover {
+    background-position: left -240px;
+}
+.v-button:focus:hover .v-button-wrap, .v-button-primary:focus:hover .v-button-wrap {
+    background-position: right -270px;
+}
+.v-button:active, .v-button.v-pressed, .v-button-primary:active, .v-button-primary.v-pressed {
+    background-position: left -120px !important;
+	padding-left: 6px;
+}
+.v-button:active .v-button-wrap, .v-button.v-pressed .v-button-wrap, .v-button-primary:active .v-button-wrap, .v-button-primary.v-pressed .v-button-wrap {
+    background-position: right -150px !important;
+	padding-left: 10px;
+}
+
+/* Manage dashboard - active state */
+#container .v-button.manage_active, #container .v-disabled.v-button.manage_active, #container .v-button-primary.manage_active,
+#container .v-disabled.v-button-primary.manage_active {
+    background-image: url('img/button-sprites.png');
+    background-position: left -300px;
+	padding-left: 6px;
+	height: 30px;
+}
+#container .manage_active .v-button-wrap, #container .v-disabled.v-button.manage_active .v-button-wrap, 
+#container .v-button-primary.manage_active .v-button-wrap, #container .v-disabled.v-button-primary.manage_active .v-button-wrap {
+    background-image: url('img/button-sprites.png');
+    background-position: right -330px;
+	padding-left: 10px;
+	height: 27px;
+}
+#container .v-button.manage_active .v-button-caption {
+	color: white;
+	text-shadow: 0 -1px 0 #000000;
+}
+#container .v-button.manage_active:hover, #container .v-button-primary.manage_active:hover {
+    background-position: left -300px;
+	padding-left: 6px;
+}
+#container .v-button.manage_active:hover .v-button-wrap, #container .v-button-primary.manage_active:hover .v-button-wrap {
+    background-position: right -330px;
+	padding-left: 10px;
+}
+#container .v-button.manage_active:active, #container .v-button.v-pressed.manage_active, 
+#container .v-button-primary.manage_active:active, #container .v-button-primary.v-pressed.manage_active {
+    background-position: left -300px !important;
+	padding-left: 6px;
+}
+#container .v-button.manage_active:active .v-button-wrap, #container .v-button.v-pressed.manage_active .v-button-wrap,
+#container .v-button-primary.manage_active:active .v-button-wrap, #container .v-button-primary.v-pressed.manage_active .v-button-wrap {
+    background-position: right -330px !important;
+	padding-left: 10px;
+}
+
+/* add app button */
+.add-app-btn .v-button-wrap, .v-button.add-app-btn:hover .v-button-wrap, .v-button.add-app-btn:focus .v-button-wrap{
+	padding-left: 6px;
+}
+
+.add-app-btn .v-button-caption{
+	padding-left: 17px;
+    background: transparent url(img/add_app_icon.png) no-repeat center left;
+}

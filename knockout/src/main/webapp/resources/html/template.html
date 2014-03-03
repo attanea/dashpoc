@@ -1,0 +1,15 @@
+<script type="text/html" id="app-template">
+    <a class="dashboard_app_link" href="app_view.html">
+    <div class="dashboard_app dashboard_box">
+        <!--<@ if(favourite) { @>-->
+        <i data-bind="css: {fa-star : favourite }" class="fa fa-star"></i>
+        <!--<@ } else { @>-->
+        <!--<i data-bind="ifnot: favourite"class="fa fa-star-o"></i>-->
+        <!--<@ } @>-->
+        <div class="dashboard_app_icon">
+            <img src="http://localhost/img/app/icones_account_closing_64_44.png" alt='data-bind="text: name'" />
+        </div>
+        <div class="dashboard_app_label" data-bind="text: name">app name</div>
+    </div>
+</a>
+</script>
