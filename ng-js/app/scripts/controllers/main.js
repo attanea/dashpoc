@@ -5,7 +5,7 @@
 angular.module('dashboardApp')
   .controller('MainCtrl', function ($scope) {
     $scope.applications = [
-        {'name':'Account Closing','image':'images/applications/icones_account_closing_64_44.png'},
-        {'name':'Secure Mail','image':'images/applications/icones_secure_mail_64_44.png'}
+        {'name':'Account Closing','image':'images/applications/icones_account_closing_64_44.png','favorite':true},
+        {'name':'Secure Mail','image':'images/applications/icones_secure_mail_64_44.png','favorite':false}
     ];
   });

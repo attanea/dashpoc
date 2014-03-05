@@ -97,7 +97,7 @@
 
 <a ng-repeat="application in applications" class="dashboard_app_link" href="app_view.html">
     <div class="dashboard_app dashboard_box">
-        <i class="fa fa-star"></i>
+        <i class="fa {{application.favorite | favorite}}"></i>
         <div class="dashboard_app_icon">
             <img ng-src="{{application.image}}" alt="{{application.name}}" />
         </div>
