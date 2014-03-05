@@ -1,3 +1,5 @@
+/* jshint indent: false */
+
 'use strict';
 
 angular.module('dashboardApp')
