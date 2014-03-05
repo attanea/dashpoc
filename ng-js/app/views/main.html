@@ -90,12 +90,12 @@
         <li><a href="#">IT / Support</a></li>
         <li><a href="#">EFG websites</a></li>
     </ul>
-    <input type="text" id="app_search" value="Search app"/><i class="fa fa-search"></i>
+    <input type="text" id="app_search" value="Search app" ng-model="query"/><i class="fa fa-search"></i>
 </div>
 
 <div id="apps_navigation">
 
-<a ng-repeat="application in applications" class="dashboard_app_link" href="app_view.html">
+<a ng-repeat="application in applications  | filter:query" class="dashboard_app_link" href="app_view.html">
     <div class="dashboard_app dashboard_box">
         <i class="fa {{application.favorite | favorite}}"></i>
         <div class="dashboard_app_icon">

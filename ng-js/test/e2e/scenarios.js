@@ -18,6 +18,14 @@ describe('Dashboard App', function() {
 
         it('should filter application list as user types into the search box', function() {
             expect(repeater('#apps_navigation a').count()).toBe(28);
+
+            input('query').enter('account');
+
+            expect(repeater('#apps_navigation a').count()).toBe(27);
+
+            input('query').enter('unknown');
+
+            expect(repeater('#apps_navigation a').count()).toBe(26);
         });
     });
 });
