@@ -27,5 +27,17 @@ describe('Dashboard App', function() {
 
             expect(repeater('#apps_navigation a').count()).toBe(26);
         });
+
+        it('should filter application list as user select a tag', function() {
+            expect(repeater('#apps_navigation a').count()).toBe(28);
+
+            select('tag').option('Banking');
+
+            expect(repeater('#apps_navigation a').count()).toBe(27);
+
+            select('tag').option('IT');
+
+            expect(repeater('#apps_navigation a').count()).toBe(26);
+        });
     });
 });
