@@ -14,13 +14,13 @@ describe('Filter: favorite', function () {
   }));
 
   it('should return the favorite class"', function () {
-    var text = true;
-    expect(favorite(text)).toBe('fa-star-o');
+    var array = ['Banking','Investment', 'Favorite'];
+    expect(favorite(array)).toBe('fa-star');
   });
 
     it('should return the not favorite class"', function () {
-        var text = false;
-        expect(favorite(text)).toBe('fa-star');
+        var array = ['Banking','Investment'];
+        expect(favorite(array)).toBe('fa-star-o');
     });
 
 });

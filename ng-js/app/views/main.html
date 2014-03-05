@@ -95,9 +95,9 @@
 
 <div id="apps_navigation">
 
-<a ng-repeat="application in applications  | filter:query | filter:tag:true" class="dashboard_app_link" href="app_view.html">
+<a ng-repeat="application in applications | filter:query | filter:tag:true" class="dashboard_app_link" href="app_view.html">
     <div class="dashboard_app dashboard_box">
-        <i class="fa {{application.favorite | favorite}}"></i>
+        <i class="fa {{application.tags | favorite}}"></i>
         <div class="dashboard_app_icon">
             <img ng-src="{{application.image}}" alt="{{application.name}}" />
         </div>
