@@ -17,27 +17,27 @@ describe('Dashboard App', function() {
 
 
         it('should filter application list as user types into the search box', function() {
-            expect(repeater('#apps_navigation a').count()).toBe(28);
+            expect(repeater('#apps_navigation a').count()).toBe(30);
 
             input('query').enter('account');
 
-            expect(repeater('#apps_navigation a').count()).toBe(27);
+            expect(repeater('#apps_navigation a').count()).toBe(3);
 
             input('query').enter('unknown');
 
-            expect(repeater('#apps_navigation a').count()).toBe(26);
+            expect(repeater('#apps_navigation a').count()).toBe(0);
         });
 
         it('should filter application list as user select a tag', function() {
-            expect(repeater('#apps_navigation a').count()).toBe(28);
+            expect(repeater('#apps_navigation a').count()).toBe(30);
 
             select('tag').option('Banking');
 
-            expect(repeater('#apps_navigation a').count()).toBe(27);
+            expect(repeater('#apps_navigation a').count()).toBe(17);
 
             select('tag').option('IT');
 
-            expect(repeater('#apps_navigation a').count()).toBe(26);
+            expect(repeater('#apps_navigation a').count()).toBe(2);
         });
     });
 });
