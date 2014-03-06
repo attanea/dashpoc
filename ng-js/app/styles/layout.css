@@ -128,13 +128,13 @@ body {margin: 0 8px;}
 }
 */
 #header_top_right img.v-icon {
-	background-image: url('../images/btn_user.png');
+	background-image: url('/images/btn_user.png');
 	display: block;
 	height: 13px;
 	width: 26px;
 }
 #header_top_right img.v-icon:hover, #header_top_right img.v-icon:focus {
-	background-image: url('../images/btn_user_hover.png');
+	background-image: url('/images/btn_user_hover.png');
 }
 
 #page{
@@ -270,7 +270,7 @@ body {margin: 0 8px;}
 	margin-bottom: auto;
 	margin-left: auto;
 }
-.dashboard_app_icon img {
+.dashboard_app_icon div {
 	height: 64px;
 	width: 64px;
 	overflow: hidden;
