@@ -17,6 +17,6 @@ describe('Controller: MainCtrl', function () {
   }));
 
   it('should attach a list of applications to the scope', function () {
-    expect(scope.applications.length).toBe(2);
+    expect(scope.applications.length).toBe(30);
   });
 });
