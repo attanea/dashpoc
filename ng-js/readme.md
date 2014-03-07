@@ -11,6 +11,8 @@ Install [Node JS](http://nodejs.org/download/). It comes now bundled with [NPM](
 
 Install [Grunt NPM module](http://gruntjs.com/getting-started).
 
+Install [GIT](http://git-scm.com/) and make git available in your path.
+
 Install [Bower NPM module](http://bower.io/#installing-bower).
 
 If needed configure corporate proxy with commands `npm config set proxy http://proxy.company.com:8080` and `npm config set https-proxy http://proxy.company.com:8080`. Also need to configure some environment variable: `HTTP_PROXY` and `HTTPS_PROXY`. With power shell respectively `$env:HTTP_PROXY= "http://chgvapryp01cn:8080"` and `$env:HTTPS_PROXY= "http://chgvapryp01cn:8080"` 
