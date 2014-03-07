@@ -13,6 +13,8 @@ Install [Grunt NPM module](http://gruntjs.com/getting-started).
 
 Install [Bower NPM module](http://bower.io/#installing-bower).
 
+If needed configure corporate proxy with command `npm config set proxy http://proxy.company.com:8080`.
+
 Run `npm install` for downloading all build plugins.
 
 Run `bower instal` for downloading all application dependencies
