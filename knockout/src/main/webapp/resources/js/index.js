@@ -14,12 +14,27 @@ var aViewModel = {
 };
 
 function ApplicationListViewModel(json) {
-    var self = this;
-    self.applications = ko.observableArray();
+    this.applications = ko.observableArray();
+    this.selectedFilter = ko.observable('Banking');
+    this.filters = ['All', 'Favorite','Banking','Investment','Admin','Audit','Communication','Employee','IT / Support','EFG websites'];
+    this.query = ko.observable('');
+    this.filteredApplications = ko.computed(function () {
+        // Represents a filtered list of apps
+        var query  = this.query();
+        var filter = this.selectedFilter();
+        if (filter == "All") return this.applications();
+        return ko.utils.arrayFilter(this.applications(), function (app) {
+            if (query) {
+                return app.name().toLowerCase().indexOf(query) > -1 && app.filters().indexOf(filter) > -1;
+            } else {
+                 return app.filters().indexOf(filter) > -1;
+            }
+        });
+    }, this);
 
     for (var i = 0; i < json.applications.length; i++) {
         var item = new ApplicationViewModel(json.applications[i]);
-        self.applications.push(item);
+        this.applications.push(item);
     }
 }
 

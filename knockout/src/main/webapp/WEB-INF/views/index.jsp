@@ -100,19 +100,23 @@
             <section class="yui3-g">
                 <div class="yui3-u-2-3">
                     <div id="app_filters">
-                        <ul id="filter_list">
-                            <li><a href="#" class="selected">All</a></li>
-                            <li><a href="dashboard_favorite_apps.html"><i class="fa fa-star"></i> My favorites</a></li>
-                            <li><a href="#">Banking</a></li>
-                            <li><a href="#">Investment</a></li>
-                            <li><a href="#">Admin</a></li>
-                            <li><a href="#">Audit / Reporting</a></li>
-                            <li><a href="#">Communication</a></li>
-                            <li><a href="#">Employee</a></li>
-                            <li><a href="#">IT / Support</a></li>
-                            <li><a href="#">EFG websites</a></li>
-                        </ul>
-                        <input type="text" id="app_search"/><i class="fa fa-search"></i>
+                        <div data-bind='template: { foreach: filters }'>
+                            <input type='radio' name="type" value='all' data-bind='checked: $parent.selectedFilter, attr: {value: $data}'/>
+                            <label data-bind="text: $data"></label>
+                        </div>
+                        <%--<ul id="filter_list">--%>
+                            <%--<li><a href="#" class="selected">All</a></li>--%>
+                            <%--<li><a href="dashboard_favorite_apps.html"><i class="fa fa-star"></i> My favorites</a></li>--%>
+                            <%--<li><a href="#">Banking</a></li>--%>
+                            <%--<li><a href="#">Investment</a></li>--%>
+                            <%--<li><a href="#">Admin</a></li>--%>
+                            <%--<li><a href="#">Audit / Reporting</a></li>--%>
+                            <%--<li><a href="#">Communication</a></li>--%>
+                            <%--<li><a href="#">Employee</a></li>--%>
+                            <%--<li><a href="#">IT / Support</a></li>--%>
+                            <%--<li><a href="#">EFG websites</a></li>--%>
+                        <%--</ul>--%>
+                        <input type="text" id="app_search" data-bind="value: query, valueUpdate: 'keyup'"/><i class="fa fa-search"></i>
                     </div>
 
                     <div id="apps_navigation">
@@ -153,7 +157,7 @@
                         </a>
 
                         <div id="applications">
-                            <div data-bind="template: { name: 'app-template', foreach: applications }"></div>
+                            <div data-bind="template: { name: 'app-template', foreach: filteredApplications }"></div>
                         </div>
 
                     </div>
