@@ -1,0 +1,39 @@
+/* RETINA DISPLAY */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (-moz-min-device-pixel-ratio : 1.5),
+only screen and (-ms-min-device-pixel-ratio : 1.5),
+only screen and (-o-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+	/* class applied to img tags to replace dynamically images for high dpi devices. See highdpi.js */
+	.replace-2x {
+		font-size: 1px; /* flag used by highdpi.js */
+	}
+
+	#user_profile{
+		background-image: url('img/btn_user@2x.png');
+		background-size: 26px 14px; /* not for IE7 / IE8 */
+		width: 26px; /* IE7 / IE8 */
+		height: 14px; /* IE7 / IE8 */
+	}
+	#user_profile:hover{
+		background-image: url('img/btn_user_hover@2x.png');
+		background-size: 26px 14px; /* not for IE7 / IE8 */
+		width: 26px; /* IE7 / IE8 */
+		height: 14px; /* IE7 / IE8 */
+	}
+
+	.dashboard_app.hidable {
+		background: #f6f6f6 url('img/hide_app_icon@2x.png') no-repeat right top;
+		background-size: 14px 14px; /* not for IE7 / IE8 */
+		width: 14px; /* IE7 / IE8 */
+		height: 14px; /* IE7 / IE8 */
+	}
+
+	.add-app-btn .v-button-caption{
+		background: transparent url('img/add_app_icon@2x.png') no-repeat center left;
+		background-size: 11px 11px; /* not for IE7 / IE8 */
+		width: 11px; /* IE7 / IE8 */
+		height: 11px; /* IE7 / IE8 */
+	}
+}

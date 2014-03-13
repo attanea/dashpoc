@@ -1,0 +1,10 @@
+body, input {font: 100%/normal Arial, Calibri, FreeSans, sans-serif; color: #444444;}
+h1 {font-size:2em;}
+h2 {font-size:1.875em;}
+p {font-size:0.875em;}
+a:link, a:visited {color:#008FCF; text-decoration: none;}
+a:hover {text-decoration: underline;}
+blockquote, .blockquote, .authorOfQuote {font-family: Arial, sans-serif; font-size: 15px;}
+.blockquote:before, blockquote:before {content: "\"";}
+.blockquote:after, blockquote:after{content: "\"";}
+.disclaimer {font-size: x-small;}

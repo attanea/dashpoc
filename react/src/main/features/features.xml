@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features name="react">
+    <feature name="react" version="${project.version}">
+        <feature>spring</feature>
+        <feature>spring-aspects</feature>
+        <feature>spring-dm</feature>
+        <feature>spring-dm-web</feature>
+        <feature>spring-web</feature>
+        <feature>war</feature>
+
+        <bundle>mvn:${project.groupId}/${project.artifactId}/${project.version}/war</bundle>
+    </feature>
+</features>

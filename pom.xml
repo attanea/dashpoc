@@ -20,6 +20,7 @@
         <module>dashboard-poc</module>
         <module>dashboard-welcome</module>
         <module>knockout</module>
+        <module>react</module>
 <!--        <module>spring-extender</module>
         <module>web-extender</module>-->
         <module>ext-js-poc</module>
