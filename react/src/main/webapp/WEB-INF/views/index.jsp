@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Knockout JS sample</title>
+    <title>React JS sample</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/index.css" type="text/css"/>
@@ -13,9 +13,12 @@
 
     <%--<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/index.js"></script>--%>
     <script type="text/javascript" src="http://localhost/js/index.js"></script>
+
     <link rel="stylesheet" type="text/css" href="http://localhost/css/styles.css" />
     <link rel="stylesheet" type="text/css" href="http://localhost/css/font-awesome-4.0.3/css/font-awesome.min.css">
 
+    <script type="text/jsx" src="${pageContext.request.contextPath}/resources/jsx/dashboard.js"></script>
+    <%--<script type="text/jsx" src="${pageContext.request.contextPath}/resources/jsx/emails.js"></script>--%>
 
     <script type="text/javascript">
 
@@ -38,13 +41,11 @@
         <h3 data-bind="text: name"></h3>
         <p>Credits: <span data-bind="text: credits"></span></p>
     </script>
-    <script type="text/jsx" src="${pageContext.request.contextPath}/resources/jsx/dashboard.js"></script>
 
 </head>
 <body>
-<div id="content"></div>
+<%--<div id="content"></div>--%>
 
-<%--
 <div id="container">
 
 
@@ -105,27 +106,7 @@
             <!-- yui3-g -->
 
             <section class="yui3-g">
-                <div class="yui3-u-2-3">
-                    <div id="app_filters">
-                        <div data-bind='template: { foreach: filters }'>
-                            <input type='radio' name="type" value='all' data-bind='checked: $parent.selectedFilter, attr: {value: $data}'/>
-                            <label data-bind="text: $data"></label>
-                        </div>
-                        &lt;%&ndash;<ul id="filter_list">&ndash;%&gt;
-                            &lt;%&ndash;<li><a href="#" class="selected">All</a></li>&ndash;%&gt;
-                            &lt;%&ndash;<li><a href="dashboard_favorite_apps.html"><i class="fa fa-star"></i> My favorites</a></li>&ndash;%&gt;
-                            &lt;%&ndash;<li><a href="#">Banking</a></li>&ndash;%&gt;
-                            &lt;%&ndash;<li><a href="#">Investment</a></li>&ndash;%&gt;
-                            &lt;%&ndash;<li><a href="#">Admin</a></li>&ndash;%&gt;
-                            &lt;%&ndash;<li><a href="#">Audit / Reporting</a></li>&ndash;%&gt;
-                            &lt;%&ndash;<li><a href="#">Communication</a></li>&ndash;%&gt;
-                            &lt;%&ndash;<li><a href="#">Employee</a></li>&ndash;%&gt;
-                            &lt;%&ndash;<li><a href="#">IT / Support</a></li>&ndash;%&gt;
-                            &lt;%&ndash;<li><a href="#">EFG websites</a></li>&ndash;%&gt;
-                        &lt;%&ndash;</ul>&ndash;%&gt;
-                        <input type="text" id="app_search" data-bind="value: query, valueUpdate: 'keyup'"/><i class="fa fa-search"></i>
-                    </div>
-
+                <div id="main-content" class="yui3-u-2-3">
                     <div id="apps_navigation">
 
                         <a class="dashboard_app_link" href="http://efginternational.com" target="_blank">
@@ -164,7 +145,7 @@
                         </a>
 
                         <div id="applications">
-                            <div data-bind="template: { name: 'app-template', foreach: filteredApplications }"></div>
+                            <%--<div data-bind="template: { name: 'app-template', foreach: filteredApplications }"></div>--%>
                         </div>
 
                     </div>
@@ -188,7 +169,6 @@
 
     </section>
 </div>
---%>
 </body>
 
 </html>

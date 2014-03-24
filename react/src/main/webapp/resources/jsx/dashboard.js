@@ -1,53 +1,107 @@
 /** @jsx React.DOM */
 
+var LiveSearch = React.createClass({
+    handleChange: function(event) {
+        var value = event.target.value;
+        console.log('value='+ value);
+        this.props.onUserInput(
+            value
+        );
+    },
+    render: function() {
+        return (
+            <div>
+                <input type="text" value={this.props.filterText} onChange={this.handleChange} ref="filterTextInput"/>
+                <i class="fa fa-search"></i>
+            </div>
+        );
+
+    }
+});
 var Application = React.createClass({
     render: function () {
-        return (
-            <a class="dashboard_app_link" href="app_view.html">
-                <div class="dashboard_app dashboard_box">
-                    <i data-bind="css: {'fa-star': favourite(), 'fa-star-o': !favourite()}" class="fa"></i>
+        var classes = 'fa ';
+        if (this.props.app.favourite) {
+            classes += 'fa-star ';
+        } else{
+            classes += 'fa-star-o ';
+        }
 
-                    <div class="dashboard_app_icon">
-                        <img src="http://localhost/img/app/icones_account_closing_64_44.png" data-bind="attr: {alt: name, title: name}"/>
+        return this.transferPropsTo(
+            <a className="dashboard_app_link" href="app_view.html">
+                <div className="dashboard_app dashboard_box">
+                    <i className={classes}></i>
+
+                    <div className="dashboard_app_icon">
+                        <img src="http://localhost/img/app/icones_account_closing_64_44.png" />
                     </div>
-                    <div class="dashboard_app_label">{this.props.name}</div>
-                    <div class="dashboard_app_label" style="diplay:none">{this.props.children}</div>
-
+                    <div className="dashboard_app_label" alt={this.props.app.description} title={this.props.app.description}>{this.props.name}</div>
                 </div>
             </a>
             );
     }
 });
 
-var CommentList = React.createClass({
+var AppList = React.createClass({
     render: function () {
-        var nodes = this.props.data.map(function (app) {
-            return <Application name={app.name}>{app.description}</Application>;
+        var nodes = [];
+        this.props.data.forEach(function(app) {
+            if (app.name.toLowerCase().indexOf(this.props.filterText.toLowerCase()) === -1) {
+                return;
+            }
+            nodes.push(<Application name={app.name} app={app}>{app.description}</Application>);
+        }.bind(this));
+        return (
+            <div className="applications">
+                {nodes}
+            </div>
+            );
+    }
+});
+
+var TagsFilter = React.createClass({
+    render:function(){
+        return (
+                <ul id="filter_list">
+                    <li><a href="#" class="selected">All</a></li>
+                    <li><a href="dashboard_favorite_apps.html"><i class="fa fa-star"></i> My favorites</a></li>
+                    <li><a href="#">Banking</a></li>
+                    <li><a href="#">Investment</a></li>
+                    <li><a href="#">Admin</a></li>
+                    <li><a href="#">Audit / Reporting</a></li>
+                    <li><a href="#">Communication</a></li>
+                    <li><a href="#">Employee</a></li>
+                    <li><a href="#">IT / Support</a></li>
+                    <li><a href="#">EFG websites</a></li>
+                </ul>
+        );
+    }
+});
+var AppFilters = React.createClass({
+
+    render: function(){
+        return (
+            <div id="app_filters">
+                <LiveSearch filterText={this.props.filterText} onUserInput={this.props.handleUserInput}/>
+                <TagsFilter/>
+            </div>
+            );
+    }
+});
+
+var DashboardMain = React.createClass({
+    handleUserInput: function(filterText) {
+        this.setState({
+            filterText: filterText
         });
-
-        return (
-            <div className="commentList">
-        {nodes}
-            </div>
-            );
-    }
-});
-
-var CommentForm = React.createClass({
-    render: function () {
-        return (
-            <div className="commentForm">
-            Hello, world! I am a CommentForm.
-            </div>
-            );
-    }
-});
-
-var CommentBox = React.createClass({
-    getInitialState: function() {
-        return {data: []};
     },
-    loadCommentsFromServer: function () {
+    getInitialState: function() {
+        return {
+            data: [],
+            filterText: ''
+        };
+    },
+    loadDataFromServer: function () {
         $.ajax({
             url: this.props.url,
             dataType: 'json',
@@ -62,14 +116,13 @@ var CommentBox = React.createClass({
         });
     },
     componentWillMount: function() {
-        this.loadCommentsFromServer();
+        this.loadDataFromServer();
     },
     render: function () {
         return (
-            <div className="commentBox">
-                <h1>Comments</h1>
-                <CommentList data={this.state.data}/>
-
+            <div className="applications">
+                <AppFilters filterText={this.state.filterText} handleUserInput={this.handleUserInput}/>
+                <AppList data={this.state.data} filterText={this.state.filterText}/>
             </div>
             );
     }
@@ -77,6 +130,6 @@ var CommentBox = React.createClass({
 
 React.renderComponent(
 //    <CommentBox url="resources/jsx/data.json"/>,
-    <CommentBox url="/dashboard/config/petzi"/>,
-    document.getElementById('content')
+    <DashboardMain url="/dashboard/config/petzi"/>,
+    document.getElementById('main-content')
 );
