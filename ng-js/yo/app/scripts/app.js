@@ -1,9 +1,6 @@
 'use strict';
 
 angular.module('dashboardApp', [
-  'ngCookies',
-  'ngResource',
-  'ngSanitize',
   'ngRoute'
 ])
   .config(function ($routeProvider) {
