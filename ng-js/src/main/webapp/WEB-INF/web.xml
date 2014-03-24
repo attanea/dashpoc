@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright(c) 2014 EFG Bank AG (Switzerland), All rights reserved.                 
+  ~
+  ~ All or part of this code is subject to copyright law, and is the sole property of EFG Bank AG.
+  ~ The full or partial use of this code is not allowed without the written consent of EFG Bank AG.
+  ~
+  ~ Parts of the code using open source software or related to GNU GPL licenses are not subject to
+  ~ EFG Bank AG copyright, but instead refer to the specific rights of these licenses.       
+  -->
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		  http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+           version="3.0">
+</web-app>

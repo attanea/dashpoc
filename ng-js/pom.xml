@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright(c) 2014 EFG Bank AG (Switzerland), All rights reserved.                 
+  ~
+  ~ All or part of this code is subject to copyright law, and is the sole property of EFG Bank AG.
+  ~ The full or partial use of this code is not allowed without the written consent of EFG Bank AG.
+  ~
+  ~ Parts of the code using open source software or related to GNU GPL licenses are not subject to
+  ~ EFG Bank AG copyright, but instead refer to the specific rights of these licenses.       
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>ch.efg.poc</groupId>
+        <artifactId>parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <name>NG JS</name>
+    <artifactId>ng-js</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+
+    <build>
+        <plugins>
+            <!-- Declare the maven yeoman plugin to launch npm, grunt and bower during the build -->
+            <plugin>
+                <groupId>com.github.trecloux</groupId>
+                <artifactId>yeoman-maven-plugin</artifactId>
+                <version>0.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- Add the yeoman dist directory to the war file-->
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <webResources>
+                        <resource>
+                            <directory>yo/dist</directory>
+                        </resource>
+                    </webResources>
+                </configuration>
+            </plugin>
+            <!-- Configure the clean plugin in order to delete generated directories -->
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>yo/dist</directory>
+                        </fileset>
+                        <fileset>
+                            <directory>yo/.tmp</directory>
+                        </fileset>
+                        <fileset>
+                            <directory>yo/app/components</directory>
+                        </fileset>
+                        <fileset>
+                            <directory>yo/node_modules</directory>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>
