@@ -31,11 +31,11 @@ describe('Dashboard App', function() {
         it('should filter application list as user select a tag', function() {
             expect(repeater('#apps_navigation a').count()).toBe(30);
 
-            select('tag').option('Banking');
+            select('tag').option('banking');
 
             expect(repeater('#apps_navigation a').count()).toBe(17);
 
-            select('tag').option('IT');
+            select('tag').option('it');
 
             expect(repeater('#apps_navigation a').count()).toBe(2);
         });
