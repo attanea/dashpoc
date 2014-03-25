@@ -34,7 +34,7 @@ angular.module('dashboardApp')
             {'code': 'client_info', 'tags': ['banking']},
             {'code': 'delegation', 'tags': ['banking']},
             {'code': 'home', 'tags': ['banking']},
-            {'code': 'client_validation ', 'tags': ['banking', 'investment']}
+            {'code': 'client_validation', 'tags': ['banking', 'investment']}
         ];
 
         $scope.tags = [
