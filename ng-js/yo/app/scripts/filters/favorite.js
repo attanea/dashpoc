@@ -5,6 +5,6 @@
 angular.module('dashboardApp')
   .filter('favorite', function () {
     return function (input) {
-      return input.indexOf('Favorite') > -1 ? 'fa-star' : 'fa-star-o';
+      return input.indexOf('favorite') > -1 ? 'fa-star' : 'fa-star-o';
     };
   });

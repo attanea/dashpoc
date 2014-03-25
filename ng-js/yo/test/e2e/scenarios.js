@@ -15,6 +15,12 @@ describe('Dashboard App', function() {
             browser().navigateTo('/index.html');
         });
 
+        it('Some applications are flagged as favorites other are not', function() {
+            expect(repeater('.fa-star').count()).toBe(2);
+
+            expect(repeater('.fa-star-o').count()).toBe(28);
+        });
+
 
         it('should filter application list as user types into the search box', function() {
             expect(repeater('#apps_navigation a').count()).toBe(30);
